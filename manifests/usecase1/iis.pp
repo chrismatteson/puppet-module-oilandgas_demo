@@ -38,11 +38,16 @@ class oilandgas_demo::usecase1::iis {
       'Web-Url-Auth',
       'Web-Windows-Auth',
     ]
+  } ->
+  iis_site { 'Default Web Site':
+    protocol => 'https',
+    ssl => true,
+    port => 443,
   }
 
   file { 'C:/inetpub/wwwroot/index.html':
     ensure  => present,
-    content => template("${module_name}/index.html.epp"),
+    content => template("${module_name}/index.html.erb"),
   }
 
 }
