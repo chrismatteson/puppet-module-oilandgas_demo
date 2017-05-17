@@ -1,6 +1,6 @@
 class oilandgas_demo::usecase3::base {
 
-  service { ''
+  service { '':
     ensure => running,
     enable => true,
   }
